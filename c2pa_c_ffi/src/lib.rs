@@ -18,6 +18,10 @@ mod error;
 mod json_api;
 mod signer_info;
 
+// High-impact UB verification tests (private, compiled only with `cargo test`)
+#[cfg(test)]
+mod unsafe_poc;
+
 pub use c2pa::{
     AsyncSigner, Builder, Error as C2paError, Reader, Result as C2paResult, Signer, SigningAlg,
 };
