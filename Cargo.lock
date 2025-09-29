@@ -770,9 +770,9 @@ dependencies = [
  "rand_chacha 0.3.1",
  "rand_core 0.9.3",
  "range-set",
- "rasn",
+ "rasn 0.22.2",
  "rasn-ocsp",
- "rasn-pkix",
+ "rasn-pkix 0.27.3",
  "regex",
  "reqwest",
  "riff",
@@ -3606,9 +3606,32 @@ dependencies = [
  "num-integer",
  "num-traits",
  "once_cell",
- "rasn-derive",
+ "rasn-derive 0.22.2",
  "serde_json",
  "snafu",
+]
+
+[[package]]
+name = "rasn"
+version = "0.27.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7210a9b03a2e77a78d3a676c81584e8cf6321e16711c31519877516c31dc26c1"
+dependencies = [
+ "bitvec",
+ "bitvec-nom2",
+ "bytes",
+ "cfg-if",
+ "chrono",
+ "either",
+ "nom",
+ "num-bigint",
+ "num-integer",
+ "num-traits",
+ "once_cell",
+ "rasn-derive 0.27.3",
+ "serde_json",
+ "snafu",
+ "xml-no-std",
 ]
 
 [[package]]
@@ -3618,7 +3641,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7f35fecd68ee4d5850baa37ee4520456bbae761fdd42a7fcb95701c268500a93"
 dependencies = [
  "proc-macro2",
- "rasn-derive-impl",
+ "rasn-derive-impl 0.22.2",
+ "syn 2.0.103",
+]
+
+[[package]]
+name = "rasn-derive"
+version = "0.27.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f4fd50ad8f3301e8dc81df0f1c2467aad9a3efe0478051896988e0951275a324"
+dependencies = [
+ "proc-macro2",
+ "rasn-derive-impl 0.27.3",
  "syn 2.0.103",
 ]
 
@@ -3637,13 +3671,27 @@ dependencies = [
 ]
 
 [[package]]
+name = "rasn-derive-impl"
+version = "0.27.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3be188123c10a7ec4946f075b5c80c970223f8906c0dda1a40495976b64efffb"
+dependencies = [
+ "either",
+ "itertools 0.13.0",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.103",
+ "uuid",
+]
+
+[[package]]
 name = "rasn-ocsp"
 version = "0.22.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5cf2cbdf7f5e46d9a4ae4f0cac4bf578b748ccf39e369e7511a94b6f106a8a9e"
 dependencies = [
- "rasn",
- "rasn-pkix",
+ "rasn 0.22.2",
+ "rasn-pkix 0.22.2",
 ]
 
 [[package]]
@@ -3652,7 +3700,16 @@ version = "0.22.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2645f907b8c01fa266c9855d8effd38b63896574a66bbce3114682b30de5d6f1"
 dependencies = [
- "rasn",
+ "rasn 0.22.2",
+]
+
+[[package]]
+name = "rasn-pkix"
+version = "0.27.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8ca8f6f4bb1d48645759b1b93c94940d7394d2e549d6c07424edae725bd13ae5"
+dependencies = [
+ "rasn 0.27.3",
 ]
 
 [[package]]
@@ -5447,6 +5504,12 @@ dependencies = [
  "thiserror 1.0.69",
  "time",
 ]
+
+[[package]]
+name = "xml-no-std"
+version = "0.8.26"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cd223bc94c615fc02bf2f4bbc22a4a9bfe489c2add3ec10b1038df3aca44cac7"
 
 [[package]]
 name = "yoke"
